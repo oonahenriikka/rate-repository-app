@@ -5,7 +5,6 @@ import pluginReactNative from "eslint-plugin-react-native";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig([
-  // Base JavaScript rules
   {
     files: ["**/*.{js,mjs,cjs,jsx,ts,tsx}"],
     plugins: { js },
@@ -14,9 +13,8 @@ export default defineConfig([
       ecmaVersion: 2020,
       sourceType: "module",
     },
-    ignores: ["**/.expo/**"], // Ignore Expo/Metro generated files
+    ignores: ["**/.expo/**"], 
   },
-  // Add browser and Node globals
   {
     files: ["**/*.{js,mjs,cjs,jsx,ts,tsx}"],
     languageOptions: {
@@ -26,7 +24,6 @@ export default defineConfig([
       },
     },
   },
-  // React recommended rules with version
   {
     files: ["**/*.{js,jsx,ts,tsx}"],
     ...pluginReact.configs.flat.recommended,
@@ -36,7 +33,6 @@ export default defineConfig([
       },
     },
   },
-  // React Native rules
   {
     files: ["**/*.{js,jsx,ts,tsx}"],
     plugins: {
@@ -47,7 +43,6 @@ export default defineConfig([
       "react-native/split-platform-components": "warn",
     },
   },
-  // Optional: Customize rules
   {
     rules: {
       "react/prop-types": "off",
